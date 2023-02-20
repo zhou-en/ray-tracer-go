@@ -38,15 +38,6 @@ func NewPoint(x float64, y float64, z float64) Tuple {
 	}
 }
 
-func NewVector(x float64, y float64, z float64) Tuple {
-	return Tuple{
-		X: x,
-		Y: y,
-		Z: z,
-		W: 0,
-	}
-}
-
 func (a Tuple) Add(b Tuple) Tuple {
 	return Tuple{
 		X: a.X + b.X,
@@ -107,10 +98,11 @@ func (a Tuple) Normal() Tuple {
 	}
 }
 
-func (a Tuple) Cross(b Tuple) Tuple {
-	return NewVector(
-		a.Y*b.Z-a.Z*b.Y,
-		a.Z*b.X-a.X*b.Z,
-		a.X*b.Y-a.Y*b.X,
-	)
+func (a *Tuple) Cross(b Tuple) Tuple {
+	return Tuple{
+		X: a.Y*b.Z - a.Z*b.Y,
+		Y: a.Z*b.X - a.X*b.Z,
+		Z: a.X*b.Y - a.Y*b.X,
+		W: 0,
+	}
 }
