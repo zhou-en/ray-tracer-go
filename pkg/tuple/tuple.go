@@ -29,15 +29,6 @@ type Color struct {
 //     W 0.0,
 /* } */
 
-func NewPoint(x float64, y float64, z float64) Tuple {
-	return Tuple{
-		X: x,
-		Y: y,
-		Z: z,
-		W: 1,
-	}
-}
-
 func (a Tuple) Add(b Tuple) Tuple {
 	return Tuple{
 		X: a.X + b.X,
