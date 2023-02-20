@@ -1,1 +1,1 @@
-# ray-tracing-by-go
+# ray-tracing
