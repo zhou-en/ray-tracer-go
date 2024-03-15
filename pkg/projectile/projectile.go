@@ -36,10 +36,9 @@ func SimulateProjectile() {
 	}
 	step := 0
 	for {
-		fmt.Println(step)
 		step += 1
-		fmt.Println(p.Position.Y)
 		p = Tick(e, p)
+		fmt.Printf("%d: %f\n", step, p.Position.Y)
 		if p.Position.Y <= 0.0 {
 			break
 		}

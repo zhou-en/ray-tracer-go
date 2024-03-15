@@ -21,8 +21,11 @@ jobs:
       with:
         go-version: '1.21'
 
+    - name: Install dependencies
+      run: go get .
+
     - name: Build
       run: go build -v ./...
 
-    - name: Test
-      run: go test -v ./...
+    - name: Test Coverage & Profile
+      run: go run github.com/onsi/ginkgo/v2/ginkgo -r --procs=4 --compilers=4 --randomize-all --randomize-suites --fail-on-pending --keep-going --cover --coverprofile=cover.profile --race --trace --json-report=report.json
