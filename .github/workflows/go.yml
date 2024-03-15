@@ -28,4 +28,4 @@ jobs:
       run: go build -v ./...
 
     - name: Test Coverage & Profile
-      run: go run github.com/onsi/ginkgo/v2/ginkgo -r --procs=4 --compilers=4 --randomize-all --randomize-suites --fail-on-pending --keep-going --cover --coverprofile=cover.profile --race --trace --json-report=report.json
+      run: go run github.com/onsi/ginkgo/v2/ginkgo -r --procs=8 --compilers=8 --randomize-all --randomize-suites --fail-on-pending --keep-going --cover --coverprofile=cover.profile --race --trace --json-report=report.json
