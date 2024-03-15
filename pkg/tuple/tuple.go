@@ -79,7 +79,7 @@ func (a Tuple) Mag() float64 {
 	return math.Sqrt(a.Dot(a))
 }
 
-func (a Tuple) Normal() Tuple {
+func (a Tuple) Norm() Tuple {
 	var m float64 = a.Mag()
 	return Tuple{
 		X: a.X / m,
@@ -95,5 +95,14 @@ func (a *Tuple) Cross(b Tuple) Tuple {
 		Y: a.Z*b.X - a.X*b.Z,
 		Z: a.X*b.Y - a.Y*b.X,
 		W: 0,
+	}
+}
+
+func NewPoint(x float64, y float64, z float64) Tuple {
+	return Tuple{
+		X: x,
+		Y: y,
+		Z: z,
+		W: 1.0,
 	}
 }

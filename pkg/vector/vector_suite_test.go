@@ -1,4 +1,4 @@
-package tuple_test
+package vector_test
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestTuple(t *testing.T) {
+func TestVector(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "Tuple Suite")
+	RunSpecs(t, "Vector Suite")
 }

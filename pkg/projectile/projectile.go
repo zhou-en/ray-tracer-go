@@ -2,6 +2,7 @@ package projectile
 
 import (
 	"fmt"
+
 	"github.com/zhou-en/ray-tracing-by-go/pkg/point"
 	"github.com/zhou-en/ray-tracing-by-go/pkg/tuple"
 	"github.com/zhou-en/ray-tracing-by-go/pkg/vector"
@@ -27,7 +28,7 @@ func Tick(env Environment, proj Projectile) Projectile {
 func SimulateProjectile() {
 	p := Projectile{
 		Position: point.New(0, 1.0, 0.0),
-		Velocity: vector.New(1.0, 3.0, 0).Normal(),
+		Velocity: vector.New(1.0, 3.0, 0).Norm(),
 	}
 	e := Environment{
 		Gravity: vector.New(0, -0.1, 0),
