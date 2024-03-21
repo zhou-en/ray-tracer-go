@@ -15,20 +15,6 @@ type Color struct {
 	Blue  float64
 }
 
-/* type Point struct { */
-//     X float64
-//     Y float64
-//     Z float64
-//     W 1.0,
-// }
-//
-// type Vector struct {
-//     X float64
-//     Y float64
-//     Z float64
-//     W 0.0,
-/* } */
-
 func (a Tuple) Add(b Tuple) Tuple {
 	return Tuple{
 		X: a.X + b.X,
