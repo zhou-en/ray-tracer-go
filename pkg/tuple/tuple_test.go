@@ -3,50 +3,14 @@ package tuple_test
 import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
-
 	"github.com/zhou-en/ray-tracing-by-go/pkg/tuple"
-	"github.com/zhou-en/ray-tracing-by-go/pkg/vector"
 )
 
-var _ = Describe("Tuple", func() {
-	It("NewPoint() should create a point with w=1", func() {
-		a := tuple.NewPoint(1.0, 2.0, 3.0)
-		Expect(a.X).To(Equal(1.0))
-		Expect(a.Y).To(Equal(2.0))
-		Expect(a.Z).To(Equal(3.0))
-		Expect(a.W).To(Equal(1.0))
-	})
-})
-
-var _ = Describe("Add 2 Points", func() {
-	It("Add() 2 points should create a new tuple with w=2", func() {
-		a := tuple.NewPoint(1.0, 2.0, 3.0)
-		b := tuple.NewPoint(4.0, 5.0, 6.0)
-		c := a.Add(b)
-		Expect(c.X).To(Equal(5.0))
-		Expect(c.Y).To(Equal(7.0))
-		Expect(c.Z).To(Equal(9.0))
-		Expect(c.W).To(Equal(2.0))
-	})
-})
-
-var _ = Describe("Points Subtraction", func() {
-	It("Subtract() 2 points should create a new tuple with w=0", func() {
-		a := tuple.NewPoint(1.0, 2.0, 3.0)
-		b := tuple.NewPoint(4.0, 5.0, 6.0)
+var _ = Describe("Subtracting a tuple from another tuple", func() {
+	It("Subtracting a tuple from another tuple should create a new tuple", func() {
+		a := tuple.New(1.0, 2.0, 3.0, 1.0)
+		b := tuple.New(4.0, 5.0, 6.0, 0)
 		c := a.Sub(b)
-		Expect(c.X).To(Equal(-3.0))
-		Expect(c.Y).To(Equal(-3.0))
-		Expect(c.Z).To(Equal(-3.0))
-		Expect(c.W).To(Equal(0.0))
-	})
-})
-
-var _ = Describe("Subtracting a vector from a point", func() {
-	It("Subtracting a vector from a point should create a new tuple with w=1", func() {
-		p := tuple.NewPoint(1.0, 2.0, 3.0)
-		v := vector.New(4.0, 5.0, 6.0)
-		c := p.Sub(v)
 		Expect(c.X).To(Equal(-3.0))
 		Expect(c.Y).To(Equal(-3.0))
 		Expect(c.Z).To(Equal(-3.0))
@@ -56,9 +20,9 @@ var _ = Describe("Subtracting a vector from a point", func() {
 
 var _ = Describe("Subtracting a vector from the zero vector (0, 0, 0)", func() {
 	It("Subtracting a vector from the zero vector should create a new vector with w=0", func() {
-		v := vector.New(1.0, 2.0, 3.0)
-		z := vector.New(0, 0, 0)
-		c := z.Sub(v)
+		v := tuple.NewVector(1.0, 2.0, 3.0)
+		z := tuple.NewVector(0, 0, 0)
+		c := z.SubVector(v)
 		Expect(c.X).To(Equal(-1.0))
 		Expect(c.Y).To(Equal(-2.0))
 		Expect(c.Z).To(Equal(-3.0))

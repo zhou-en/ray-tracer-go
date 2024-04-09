@@ -3,36 +3,37 @@ package projectile
 import (
 	"fmt"
 
-	"github.com/zhou-en/ray-tracing-by-go/pkg/point"
 	"github.com/zhou-en/ray-tracing-by-go/pkg/tuple"
-	"github.com/zhou-en/ray-tracing-by-go/pkg/vector"
 )
 
 type Projectile struct {
-	Position tuple.Tuple
-	Velocity tuple.Tuple
+	Position tuple.Point
+	Velocity tuple.Vector
 }
 
 type Environment struct {
-	Gravity tuple.Tuple
-	Wind    tuple.Tuple
+	Gravity tuple.Vector
+	Wind    tuple.Vector
 }
 
 func Tick(env Environment, proj Projectile) Projectile {
-	position := proj.Velocity.Add(proj.Velocity)
-	velocity := proj.Velocity.Add(env.Gravity).Add(env.Wind)
+	position := proj.Position.AddVector(proj.Velocity)
+	withGrav := proj.Velocity.AddVector(env.Gravity)
+	velocity := withGrav.AddVector(env.Wind)
 
 	return Projectile{position, velocity}
 }
 
 func SimulateProjectile() {
+
+	v := tuple.NewVector(1.0, 1.0, 0)
 	p := Projectile{
-		Position: point.New(0, 1.0, 0.0),
-		Velocity: vector.New(1.0, 3.0, 0).Norm(),
+		Position: tuple.NewPoint(0, 1.0, 0.0),
+		Velocity: v.Norm(),
 	}
 	e := Environment{
-		Gravity: vector.New(0, -0.1, 0),
-		Wind:    vector.New(-0.01, 0, 0),
+		Gravity: tuple.NewVector(0, -0.1, 0),
+		Wind:    tuple.NewVector(-0.01, 0, 0),
 	}
 	step := 0
 	for {
