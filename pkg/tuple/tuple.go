@@ -13,12 +13,6 @@ type Tuple struct {
 	W float64
 }
 
-type Color struct {
-	Red   float64
-	Green float64
-	Blue  float64
-}
-
 func New(x float64, y float64, z float64, w float64) Tuple {
 	return Tuple{
 		X: x,

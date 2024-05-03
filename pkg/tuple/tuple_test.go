@@ -32,8 +32,8 @@ var _ = Describe("Subtracting a vector from the zero vector (0, 0, 0)", func() {
 
 var _ = Describe("Multiply a Tuple by a scalar", func() {
 	It("Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar", func() {
-		var s float64 = 2.0
-		v := tuple.Tuple{1.0, 2.0, 3.0, 4.0}
+		var s = 2.0
+		v := tuple.Tuple{X: 1.0, Y: 2.0, Z: 3.0, W: 4.0}
 		v.Prod(s)
 		Expect(v.X).To(Equal(2.0))
 		Expect(v.Y).To(Equal(4.0))
@@ -45,20 +45,11 @@ var _ = Describe("Multiply a Tuple by a scalar", func() {
 var _ = Describe("Divide a Tuple by a scalar", func() {
 	It("Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar", func() {
 		var s float64 = 2.0
-		v := tuple.Tuple{1.0, 2.0, 3.0, 4.0}
+		v := tuple.Tuple{X: 1.0, Y: 2.0, Z: 3.0, W: 4.0}
 		v.Div(s)
 		Expect(v.X).To(Equal(0.5))
 		Expect(v.Y).To(Equal(1.0))
 		Expect(v.Z).To(Equal(1.5))
 		Expect(v.W).To(Equal(2.0))
-	})
-})
-
-var _ = Describe("Colors", func() {
-	It("Color are red green blue tuple", func() {
-		v := tuple.Color{-0.5, 0.4, 1.7}
-		Expect(v.Red).To(Equal(-0.5))
-		Expect(v.Green).To(Equal(0.4))
-		Expect(v.Blue).To(Equal(1.7))
 	})
 })
