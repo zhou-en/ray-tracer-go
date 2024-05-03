@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, world!")
 	fmt.Println(tuple.NewVector(1, 2, 3).X)
 	projectile.SimulateProjectile()
 }

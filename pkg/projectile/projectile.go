@@ -26,9 +26,9 @@ func Tick(env Environment, proj Projectile) Projectile {
 
 func SimulateProjectile() {
 
-	v := tuple.NewVector(1.0, 1.0, 0)
+	v := tuple.NewVector(0, .0, 0)
 	p := Projectile{
-		Position: tuple.NewPoint(0, 1.0, 0.0),
+		Position: tuple.NewPoint(0, 0, 0),
 		Velocity: v.Norm(),
 	}
 	e := Environment{
