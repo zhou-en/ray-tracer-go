@@ -59,3 +59,7 @@ func (c *Canvas) AddPixel(x, y int, color color.Color) bool {
 	}
 	return false
 }
+
+func (c *Canvas) WriteToPPM() {
+
+}

@@ -34,7 +34,7 @@ func (a *Tuple) AddTuple(b Tuple) Tuple {
 func (a *Tuple) Add(v ...Tuple) Tuple {
 	var result Tuple
 	for _, t := range v {
-		result = result.AddTuple(t)
+		result = a.AddTuple(t)
 	}
 	return result
 }
@@ -51,7 +51,7 @@ func (a *Tuple) SubTuple(b Tuple) Tuple {
 func (a *Tuple) Sub(v ...Tuple) Tuple {
 	var result Tuple
 	for _, t := range v {
-		result = result.SubTuple(t)
+		result = a.SubTuple(t)
 	}
 	return result
 }

@@ -9,6 +9,24 @@ type Color struct {
 }
 
 func New(red, green, blue float64) Color {
+	if red > 255 {
+		red = float64(255)
+	} else if red < 0 {
+		red = float64(0)
+	}
+
+	if green > 255 {
+		green = float64(255)
+	} else if green < 0 {
+		green = float64(0)
+	}
+
+	if blue > 255 {
+		blue = float64(255)
+	} else if blue < 0 {
+		blue = float64(0)
+	}
+
 	return Color{
 		Red:   red,
 		Green: green,

@@ -11,10 +11,10 @@ const tolerance = 0.0000001
 
 var _ = Describe("Color Assignment", func() {
 	It("Color are red green blue tuple", func() {
-		c := color.New(-0.5, 0.4, 1.7)
-		Expect(c.Red).To(Equal(-0.5))
+		c := color.New(-0.5, 0.4, 265)
+		Expect(c.Red).To(Equal(float64(0)))
 		Expect(c.Green).To(Equal(0.4))
-		Expect(c.Blue).To(Equal(1.7))
+		Expect(c.Blue).To(Equal(float64(255)))
 	})
 })
 
