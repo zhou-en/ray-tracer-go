@@ -12,9 +12,9 @@ const tolerance = 0.0000001
 var _ = Describe("Color Assignment", func() {
 	It("Color are red green blue tuple", func() {
 		c := color.New(-0.5, 0.4, 265)
-		Expect(c.Red).To(Equal(float64(0)))
+		Expect(c.Red).To(Equal(-0.5))
 		Expect(c.Green).To(Equal(0.4))
-		Expect(c.Blue).To(Equal(float64(255)))
+		Expect(c.Blue).To(Equal(float64(265)))
 	})
 })
 
@@ -52,6 +52,36 @@ var _ = Describe("Colors Operations", func() {
 		Expect(c.Red).To(pkg.BeCloseTo(0.63, tolerance))
 		Expect(c.Green).To(pkg.BeCloseTo(0.06, tolerance))
 		Expect(c.Blue).To(pkg.BeCloseTo(0.1875, tolerance))
+	})
+
+	// Scaling table tests
+	var (
+		testCases = []struct {
+			Color         color.Color
+			expectedColor color.Color
+		}{
+			{
+				Color:         color.New(1.5, 0, 0),
+				expectedColor: color.New(255, 0, 0),
+			},
+			{
+				Color:         color.New(0, 0.5, 0),
+				expectedColor: color.New(0, 128, 0),
+			},
+			{
+				Color:         color.New(-0.5, 0, 1),
+				expectedColor: color.New(0, 0, 255),
+			},
+		}
+	)
+
+	It("Scale a color", func() {
+		for _, tc := range testCases {
+			tc.Color.Scale()
+			Expect(tc.Color.Red).To(Equal(tc.expectedColor.Red))
+			Expect(tc.Color.Green).To(Equal(tc.expectedColor.Green))
+			Expect(tc.Color.Blue).To(Equal(tc.expectedColor.Blue))
+		}
 	})
 
 })

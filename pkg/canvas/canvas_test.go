@@ -35,4 +35,15 @@ var _ = Describe("Canvas Creation", func() {
 		Expect(newPixel.X).To(Equal(2))
 		Expect(newPixel.Y).To(Equal(3))
 	})
+
+	It("Set color for all pixels", func() {
+		width := 2
+		height := 3
+		red := color.New(255, 0, 0)
+		c := canvas.New(width, height)
+		c.SetColor(red)
+		for _, p := range c.Pixels {
+			Expect(p.Color).To(Equal(red))
+		}
+	})
 })

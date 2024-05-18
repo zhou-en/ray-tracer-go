@@ -1,6 +1,8 @@
 package canvas
 
-import "github.com/zhou-en/ray-tracing-by-go/pkg/color"
+import (
+	"github.com/zhou-en/ray-tracing-by-go/pkg/color"
+)
 
 type Pixel struct {
 	X     int
@@ -14,6 +16,10 @@ func NewPixel(x, y int, color color.Color) Pixel {
 		Y:     y,
 		Color: color,
 	}
+}
+
+func (p *Pixel) UpdateColor(newColor color.Color) {
+	p.Color = newColor
 }
 
 type Canvas struct {
@@ -60,6 +66,12 @@ func (c *Canvas) AddPixel(x, y int, color color.Color) bool {
 	return false
 }
 
-func (c *Canvas) WriteToPPM() {
-
+// SetColor sets all pixels' color to the given one
+func (c *Canvas) SetColor(newColor color.Color) {
+	var newPixels []Pixel
+	for _, p := range c.Pixels {
+		p.UpdateColor(newColor)
+		newPixels = append(newPixels, p)
+	}
+	c.Pixels = newPixels
 }

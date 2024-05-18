@@ -1,0 +1,275 @@
+[
+  {
+    "SuitePath": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple",
+    "SuiteDescription": "Tuple Suite",
+    "SuiteLabels": [],
+    "SuiteSucceeded": true,
+    "SuiteHasProgrammaticFocus": false,
+    "SpecialSuiteFailureReasons": null,
+    "PreRunStats": {
+      "TotalSpecs": 4,
+      "SpecsThatWillRun": 4
+    },
+    "StartTime": "2024-05-04T15:23:42.336461-06:00",
+    "EndTime": "2024-05-04T15:23:42.337322-06:00",
+    "RunTime": 860625,
+    "SuiteConfig": {
+      "RandomSeed": 1714857821,
+      "RandomizeAllSpecs": true,
+      "FocusStrings": null,
+      "SkipStrings": null,
+      "FocusFiles": null,
+      "SkipFiles": null,
+      "LabelFilter": "",
+      "FailOnPending": true,
+      "FailFast": false,
+      "FlakeAttempts": 0,
+      "MustPassRepeatedly": 0,
+      "DryRun": false,
+      "PollProgressAfter": 0,
+      "PollProgressInterval": 0,
+      "Timeout": 3598953412250,
+      "EmitSpecProgress": false,
+      "OutputInterceptorMode": "",
+      "SourceRoots": null,
+      "GracePeriod": 30000000000,
+      "ParallelProcess": 1,
+      "ParallelTotal": 1,
+      "ParallelHost": ""
+    },
+    "SpecReports": [
+      {
+        "ContainerHierarchyTexts": [
+          "Multiply a Tuple by a scalar"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 33
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 34
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar",
+        "State": "passed",
+        "StartTime": "2024-05-04T15:23:42.336826-06:00",
+        "EndTime": "2024-05-04T15:23:42.336972-06:00",
+        "RunTime": 146791,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 34
+            },
+            "TimelineLocation": {
+              "Order": 1,
+              "Time": "2024-05-04T15:23:42.336893-06:00"
+            },
+            "Message": "Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 34
+            },
+            "TimelineLocation": {
+              "Order": 3,
+              "Time": "2024-05-04T15:23:42.336965-06:00"
+            },
+            "Message": "Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar",
+            "Duration": 72417,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Subtracting a vector from the zero vector (0, 0, 0)"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 22
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Subtracting a vector from the zero vector should create a new vector with w=0",
+        "State": "passed",
+        "StartTime": "2024-05-04T15:23:42.337029-06:00",
+        "EndTime": "2024-05-04T15:23:42.337075-06:00",
+        "RunTime": 45791,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 22
+            },
+            "TimelineLocation": {
+              "Order": 4,
+              "Time": "2024-05-04T15:23:42.337034-06:00"
+            },
+            "Message": "Subtracting a vector from the zero vector should create a new vector with w=0",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 22
+            },
+            "TimelineLocation": {
+              "Order": 6,
+              "Time": "2024-05-04T15:23:42.33707-06:00"
+            },
+            "Message": "Subtracting a vector from the zero vector should create a new vector with w=0",
+            "Duration": 35750,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Divide a Tuple by a scalar"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 45
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 46
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar",
+        "State": "passed",
+        "StartTime": "2024-05-04T15:23:42.337131-06:00",
+        "EndTime": "2024-05-04T15:23:42.337177-06:00",
+        "RunTime": 46042,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 46
+            },
+            "TimelineLocation": {
+              "Order": 7,
+              "Time": "2024-05-04T15:23:42.337136-06:00"
+            },
+            "Message": "Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 46
+            },
+            "TimelineLocation": {
+              "Order": 9,
+              "Time": "2024-05-04T15:23:42.337171-06:00"
+            },
+            "Message": "Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar",
+            "Duration": 35458,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Subtracting a tuple from another tuple"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 9
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 10
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Subtracting a tuple from another tuple should create a new tuple",
+        "State": "passed",
+        "StartTime": "2024-05-04T15:23:42.337227-06:00",
+        "EndTime": "2024-05-04T15:23:42.337273-06:00",
+        "RunTime": 46125,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 10
+            },
+            "TimelineLocation": {
+              "Order": 10,
+              "Time": "2024-05-04T15:23:42.337231-06:00"
+            },
+            "Message": "Subtracting a tuple from another tuple should create a new tuple",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 10
+            },
+            "TimelineLocation": {
+              "Order": 12,
+              "Time": "2024-05-04T15:23:42.337267-06:00"
+            },
+            "Message": "Subtracting a tuple from another tuple should create a new tuple",
+            "Duration": 36250,
+            "NodeType": "It"
+          }
+        ]
+      }
+    ]
+  }
+]
