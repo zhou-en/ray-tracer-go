@@ -1,0 +1,706 @@
+[
+  {
+    "SuitePath": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/canvas",
+    "SuiteDescription": "",
+    "SuiteLabels": null,
+    "SuiteSucceeded": false,
+    "SuiteHasProgrammaticFocus": false,
+    "SpecialSuiteFailureReasons": [
+      "Failed to compile canvas:\n\ngo build github.com/zhou-en/ray-tracing-by-go/pkg/canvas:\n# cover github.com/zhou-en/ray-tracing-by-go/pkg/canvas\n2024/05/04 21:38:29 cover: /Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/canvas/canvas.go: /Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/canvas/canvas.go:79:6: expected 1 expression (and 5 more errors)\n"
+    ],
+    "PreRunStats": {
+      "TotalSpecs": 0,
+      "SpecsThatWillRun": 0
+    },
+    "StartTime": "0001-01-01T00:00:00Z",
+    "EndTime": "0001-01-01T00:00:00Z",
+    "RunTime": 0,
+    "SuiteConfig": {
+      "RandomSeed": 1714880309,
+      "RandomizeAllSpecs": true,
+      "FocusStrings": null,
+      "SkipStrings": null,
+      "FocusFiles": null,
+      "SkipFiles": null,
+      "LabelFilter": "",
+      "FailOnPending": true,
+      "FailFast": false,
+      "FlakeAttempts": 0,
+      "MustPassRepeatedly": 0,
+      "DryRun": false,
+      "PollProgressAfter": 0,
+      "PollProgressInterval": 0,
+      "Timeout": 3597359127875,
+      "EmitSpecProgress": false,
+      "OutputInterceptorMode": "",
+      "SourceRoots": null,
+      "GracePeriod": 30000000000,
+      "ParallelProcess": 1,
+      "ParallelTotal": 1,
+      "ParallelHost": ""
+    },
+    "SpecReports": null
+  },
+  {
+    "SuitePath": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color",
+    "SuiteDescription": "Color Suite",
+    "SuiteLabels": [],
+    "SuiteSucceeded": true,
+    "SuiteHasProgrammaticFocus": false,
+    "SpecialSuiteFailureReasons": null,
+    "PreRunStats": {
+      "TotalSpecs": 6,
+      "SpecsThatWillRun": 6
+    },
+    "StartTime": "2024-05-04T21:38:31.046927-06:00",
+    "EndTime": "2024-05-04T21:38:31.048654-06:00",
+    "RunTime": 1727125,
+    "SuiteConfig": {
+      "RandomSeed": 1714880309,
+      "RandomizeAllSpecs": true,
+      "FocusStrings": null,
+      "SkipStrings": null,
+      "FocusFiles": null,
+      "SkipFiles": null,
+      "LabelFilter": "",
+      "FailOnPending": true,
+      "FailFast": false,
+      "FlakeAttempts": 0,
+      "MustPassRepeatedly": 0,
+      "DryRun": false,
+      "PollProgressAfter": 0,
+      "PollProgressInterval": 0,
+      "Timeout": 3598572345417,
+      "EmitSpecProgress": false,
+      "OutputInterceptorMode": "",
+      "SourceRoots": null,
+      "GracePeriod": 30000000000,
+      "ParallelProcess": 1,
+      "ParallelTotal": 1,
+      "ParallelHost": ""
+    },
+    "SpecReports": [
+      {
+        "ContainerHierarchyTexts": [
+          "Color Assignment"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+            "LineNumber": 12
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+          "LineNumber": 13
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Color are red green blue tuple",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:31.047212-06:00",
+        "EndTime": "2024-05-04T21:38:31.047357-06:00",
+        "RunTime": 144333,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 13
+            },
+            "TimelineLocation": {
+              "Order": 1,
+              "Time": "2024-05-04T21:38:31.047279-06:00"
+            },
+            "Message": "Color are red green blue tuple",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 13
+            },
+            "TimelineLocation": {
+              "Order": 3,
+              "Time": "2024-05-04T21:38:31.047348-06:00"
+            },
+            "Message": "Color are red green blue tuple",
+            "Duration": 68917,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Colors Operations"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+          "LineNumber": 22
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Add another color to another",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:31.04741-06:00",
+        "EndTime": "2024-05-04T21:38:31.047878-06:00",
+        "RunTime": 467708,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 22
+            },
+            "TimelineLocation": {
+              "Order": 4,
+              "Time": "2024-05-04T21:38:31.047415-06:00"
+            },
+            "Message": "Add another color to another",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 22
+            },
+            "TimelineLocation": {
+              "Order": 6,
+              "Time": "2024-05-04T21:38:31.047865-06:00"
+            },
+            "Message": "Add another color to another",
+            "Duration": 449959,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Colors Operations"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+          "LineNumber": 48
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Blend a color from another",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:31.047929-06:00",
+        "EndTime": "2024-05-04T21:38:31.048092-06:00",
+        "RunTime": 163458,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 48
+            },
+            "TimelineLocation": {
+              "Order": 7,
+              "Time": "2024-05-04T21:38:31.047934-06:00"
+            },
+            "Message": "Blend a color from another",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 48
+            },
+            "TimelineLocation": {
+              "Order": 9,
+              "Time": "2024-05-04T21:38:31.048085-06:00"
+            },
+            "Message": "Blend a color from another",
+            "Duration": 151125,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Colors Operations"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+          "LineNumber": 40
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Multiple by a scalar",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:31.048167-06:00",
+        "EndTime": "2024-05-04T21:38:31.048227-06:00",
+        "RunTime": 60541,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 40
+            },
+            "TimelineLocation": {
+              "Order": 10,
+              "Time": "2024-05-04T21:38:31.048172-06:00"
+            },
+            "Message": "Multiple by a scalar",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 40
+            },
+            "TimelineLocation": {
+              "Order": 12,
+              "Time": "2024-05-04T21:38:31.048222-06:00"
+            },
+            "Message": "Multiple by a scalar",
+            "Duration": 50125,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Colors Operations"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+          "LineNumber": 31
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Subtract a color from another",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:31.048314-06:00",
+        "EndTime": "2024-05-04T21:38:31.048371-06:00",
+        "RunTime": 57542,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 31
+            },
+            "TimelineLocation": {
+              "Order": 13,
+              "Time": "2024-05-04T21:38:31.048319-06:00"
+            },
+            "Message": "Subtract a color from another",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 31
+            },
+            "TimelineLocation": {
+              "Order": 15,
+              "Time": "2024-05-04T21:38:31.048367-06:00"
+            },
+            "Message": "Subtract a color from another",
+            "Duration": 48666,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Colors Operations"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+          "LineNumber": 57
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Scale a color",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:31.048425-06:00",
+        "EndTime": "2024-05-04T21:38:31.048555-06:00",
+        "RunTime": 130250,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 57
+            },
+            "TimelineLocation": {
+              "Order": 16,
+              "Time": "2024-05-04T21:38:31.04843-06:00"
+            },
+            "Message": "Scale a color",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/color/color_test.go",
+              "LineNumber": 57
+            },
+            "TimelineLocation": {
+              "Order": 18,
+              "Time": "2024-05-04T21:38:31.048546-06:00"
+            },
+            "Message": "Scale a color",
+            "Duration": 116667,
+            "NodeType": "It"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "SuitePath": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple",
+    "SuiteDescription": "Tuple Suite",
+    "SuiteLabels": [],
+    "SuiteSucceeded": true,
+    "SuiteHasProgrammaticFocus": false,
+    "SpecialSuiteFailureReasons": null,
+    "PreRunStats": {
+      "TotalSpecs": 4,
+      "SpecsThatWillRun": 4
+    },
+    "StartTime": "2024-05-04T21:38:32.262518-06:00",
+    "EndTime": "2024-05-04T21:38:32.263421-06:00",
+    "RunTime": 902875,
+    "SuiteConfig": {
+      "RandomSeed": 1714880309,
+      "RandomizeAllSpecs": true,
+      "FocusStrings": null,
+      "SkipStrings": null,
+      "FocusFiles": null,
+      "SkipFiles": null,
+      "LabelFilter": "",
+      "FailOnPending": true,
+      "FailFast": false,
+      "FlakeAttempts": 0,
+      "MustPassRepeatedly": 0,
+      "DryRun": false,
+      "PollProgressAfter": 0,
+      "PollProgressInterval": 0,
+      "Timeout": 3597359127875,
+      "EmitSpecProgress": false,
+      "OutputInterceptorMode": "",
+      "SourceRoots": null,
+      "GracePeriod": 30000000000,
+      "ParallelProcess": 1,
+      "ParallelTotal": 1,
+      "ParallelHost": ""
+    },
+    "SpecReports": [
+      {
+        "ContainerHierarchyTexts": [
+          "Subtracting a tuple from another tuple"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 9
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 10
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Subtracting a tuple from another tuple should create a new tuple",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:32.262826-06:00",
+        "EndTime": "2024-05-04T21:38:32.263055-06:00",
+        "RunTime": 229709,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 10
+            },
+            "TimelineLocation": {
+              "Order": 1,
+              "Time": "2024-05-04T21:38:32.262899-06:00"
+            },
+            "Message": "Subtracting a tuple from another tuple should create a new tuple",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 10
+            },
+            "TimelineLocation": {
+              "Order": 3,
+              "Time": "2024-05-04T21:38:32.263049-06:00"
+            },
+            "Message": "Subtracting a tuple from another tuple should create a new tuple",
+            "Duration": 150041,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Subtracting a vector from the zero vector (0, 0, 0)"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 21
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 22
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Subtracting a vector from the zero vector should create a new vector with w=0",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:32.263135-06:00",
+        "EndTime": "2024-05-04T21:38:32.263179-06:00",
+        "RunTime": 43375,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 22
+            },
+            "TimelineLocation": {
+              "Order": 4,
+              "Time": "2024-05-04T21:38:32.263141-06:00"
+            },
+            "Message": "Subtracting a vector from the zero vector should create a new vector with w=0",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 22
+            },
+            "TimelineLocation": {
+              "Order": 6,
+              "Time": "2024-05-04T21:38:32.263174-06:00"
+            },
+            "Message": "Subtracting a vector from the zero vector should create a new vector with w=0",
+            "Duration": 33125,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Multiply a Tuple by a scalar"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 33
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 34
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:32.263241-06:00",
+        "EndTime": "2024-05-04T21:38:32.263284-06:00",
+        "RunTime": 42916,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 34
+            },
+            "TimelineLocation": {
+              "Order": 7,
+              "Time": "2024-05-04T21:38:32.263246-06:00"
+            },
+            "Message": "Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 34
+            },
+            "TimelineLocation": {
+              "Order": 9,
+              "Time": "2024-05-04T21:38:32.26328-06:00"
+            },
+            "Message": "Tuple multiplies a scalar should create a new tuple with components that are muliplied by the scalar",
+            "Duration": 33167,
+            "NodeType": "It"
+          }
+        ]
+      },
+      {
+        "ContainerHierarchyTexts": [
+          "Divide a Tuple by a scalar"
+        ],
+        "ContainerHierarchyLocations": [
+          {
+            "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+            "LineNumber": 45
+          }
+        ],
+        "ContainerHierarchyLabels": [
+          []
+        ],
+        "LeafNodeType": "It",
+        "LeafNodeLocation": {
+          "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+          "LineNumber": 46
+        },
+        "LeafNodeLabels": [],
+        "LeafNodeText": "Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar",
+        "State": "passed",
+        "StartTime": "2024-05-04T21:38:32.263329-06:00",
+        "EndTime": "2024-05-04T21:38:32.26337-06:00",
+        "RunTime": 41291,
+        "ParallelProcess": 1,
+        "NumAttempts": 1,
+        "MaxFlakeAttempts": 0,
+        "MaxMustPassRepeatedly": 0,
+        "SpecEvents": [
+          {
+            "SpecEventType": "Node",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 46
+            },
+            "TimelineLocation": {
+              "Order": 10,
+              "Time": "2024-05-04T21:38:32.263333-06:00"
+            },
+            "Message": "Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar",
+            "NodeType": "It"
+          },
+          {
+            "SpecEventType": "Node (End)",
+            "CodeLocation": {
+              "FileName": "/Users/enzhou/go/src/github.com/zhou-en/ray-tracer-go/pkg/tuple/tuple_test.go",
+              "LineNumber": 46
+            },
+            "TimelineLocation": {
+              "Order": 12,
+              "Time": "2024-05-04T21:38:32.263366-06:00"
+            },
+            "Message": "Divide a Tuple by a scalar should update the components of the Tuple by dividing the scalar",
+            "Duration": 32375,
+            "NodeType": "It"
+          }
+        ]
+      }
+    ]
+  }
+]
