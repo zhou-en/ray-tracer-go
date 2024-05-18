@@ -2,6 +2,9 @@ package projectile
 
 import (
 	"fmt"
+	"github.com/zhou-en/ray-tracing-by-go/pkg/canvas"
+	"github.com/zhou-en/ray-tracing-by-go/pkg/color"
+	"github.com/zhou-en/ray-tracing-by-go/pkg/ppm"
 
 	"github.com/zhou-en/ray-tracing-by-go/pkg/tuple"
 )
@@ -35,14 +38,19 @@ func SimulateProjectile() {
 		Gravity: tuple.NewVector(0, -0.1, 0),
 		Wind:    tuple.NewVector(-0.01, 0, 0),
 	}
+	c := canvas.New(900, 550)
 	step := 0
 	for {
 		step += 1
 		p = Tick(e, p)
 		fmt.Printf("%d: %f\n", step, p.Position.Y)
+		c.AddPixel(int(p.Position.X), c.Height-int(p.Position.Y), color.CreateRGBByName("red"))
 		if p.Position.Y <= 0.0 {
 			break
 		}
 	}
+
+	ppmData := ppm.New(c)
+	ppmData.WriteToFile()
 
 }
