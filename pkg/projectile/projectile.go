@@ -29,10 +29,14 @@ func Tick(env Environment, proj Projectile) Projectile {
 
 func SimulateProjectile() {
 
-	v := tuple.NewVector(0, .0, 0)
+	v := tuple.NewVector(1.0, 1.8, 0)
+	normedV := v.Norm()
+	normedV.X = normedV.X * 11.25
+	normedV.Y = normedV.Y * 11.25
+	normedV.Z = normedV.Z * 11.25
 	p := Projectile{
-		Position: tuple.NewPoint(0, 0, 0),
-		Velocity: v.Norm(),
+		Position: tuple.NewPoint(10, 100, 0),
+		Velocity: normedV,
 	}
 	e := Environment{
 		Gravity: tuple.NewVector(0, -0.1, 0),
@@ -51,6 +55,9 @@ func SimulateProjectile() {
 	}
 
 	ppmData := ppm.New(c)
-	ppmData.WriteToFile()
+	err := ppmData.WritePPMToFile(ppmData, "output.ppm")
+	if err != nil {
+		return
+	}
 
 }
