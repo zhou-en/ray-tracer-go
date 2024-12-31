@@ -1,28 +1,21 @@
 package tuple
 
-import "math"
+import (
+	"math"
+)
 
-/*
-	Tuple
-*/
-
+// Tuple represents a 4D tuple.
 type Tuple struct {
-	X float64
-	Y float64
-	Z float64
-	W float64
+	X, Y, Z, W float64
 }
 
-func New(x float64, y float64, z float64, w float64) Tuple {
-	return Tuple{
-		X: x,
-		Y: y,
-		Z: z,
-		W: w,
-	}
+// NewTuple creates a new Tuple.
+func NewTuple(x, y, z, w float64) Tuple {
+	return Tuple{X: x, Y: y, Z: z, W: w}
 }
 
-func (a *Tuple) AddTuple(b Tuple) Tuple {
+// Add adds two tuples and returns the result.
+func (a Tuple) Add(b Tuple) Tuple {
 	return Tuple{
 		X: a.X + b.X,
 		Y: a.Y + b.Y,
@@ -31,15 +24,8 @@ func (a *Tuple) AddTuple(b Tuple) Tuple {
 	}
 }
 
-func (a *Tuple) Add(v ...Tuple) Tuple {
-	var result Tuple
-	for _, t := range v {
-		result = a.AddTuple(t)
-	}
-	return result
-}
-
-func (a *Tuple) SubTuple(b Tuple) Tuple {
+// Sub subtracts two tuples and returns the result.
+func (a Tuple) Sub(b Tuple) Tuple {
 	return Tuple{
 		X: a.X - b.X,
 		Y: a.Y - b.Y,
@@ -48,104 +34,76 @@ func (a *Tuple) SubTuple(b Tuple) Tuple {
 	}
 }
 
-func (a *Tuple) Sub(v ...Tuple) Tuple {
-	var result Tuple
-	for _, t := range v {
-		result = a.SubTuple(t)
-	}
-	return result
-}
-
-func (a *Tuple) Negate() {
-	a.X *= -1
-	a.Y *= -1
-	a.Z *= -1
-	a.W *= -1
-}
-
-func (a *Tuple) Prod(b float64) {
-	a.X = a.X * b
-	a.Y = a.Y * b
-	a.Z = a.Z * b
-	a.W = a.W * b
-}
-
-func (a *Tuple) Div(b float64) {
-	a.X = a.X / b
-	a.Y = a.Y / b
-	a.Z = a.Z / b
-	a.W = a.W / b
-}
-
-/*
-	Point
-*/
-
-type Point struct {
-	Tuple
-}
-
-func NewPoint(x float64, y float64, z float64) Point {
-	return Point{
-		Tuple{
-			X: x,
-			Y: y,
-			Z: z,
-			W: 1.0,
-		},
-
-		//New(x, y, z, 1.0),
+// Negate returns the negated tuple.
+func (a Tuple) Negate() Tuple {
+	return Tuple{
+		X: -a.X,
+		Y: -a.Y,
+		Z: -a.Z,
+		W: -a.W,
 	}
 }
 
-func (a *Point) AddVector(b Vector) Point {
-	return NewPoint(
-		a.X+b.X,
-		a.Y+b.Y,
-		a.Z+b.Z,
-	)
-}
-
-/*
-	Vector
-*/
-
-type Vector struct {
-	Tuple
-}
-
-func NewVector(x float64, y float64, z float64) Vector {
-	return Vector{
-		New(
-			x,
-			y,
-			z,
-			0,
-		),
+// Scale scales the tuple by a scalar and returns the result.
+func (a Tuple) Scale(factor float64) Tuple {
+	return Tuple{
+		X: a.X * factor,
+		Y: a.Y * factor,
+		Z: a.Z * factor,
+		W: a.W * factor,
 	}
 }
-func (v *Vector) Dot(b Vector) float64 {
-	var s float64 = 0
-	s += v.X * b.X
-	s += v.Y * b.Y
-	s += v.Z * b.Z
-	return s
+
+// Divide divides the tuple by a scalar and returns the result.
+func (a Tuple) Divide(factor float64) Tuple {
+	return Tuple{
+		X: a.X / factor,
+		Y: a.Y / factor,
+		Z: a.Z / factor,
+		W: a.W / factor,
+	}
 }
 
-func (v *Vector) Mag() float64 {
+// Point represents a point in 3D space.
+type Point Tuple
+
+// NewPoint creates a new Point.
+func NewPoint(x, y, z float64) Point {
+	return Point(NewTuple(x, y, z, 1.0))
+}
+
+// AddVector adds a vector to a point and returns a new point.
+func (p Point) AddVector(v Vector) Point {
+	t := Tuple(p).Add(Tuple(v))
+	return Point{X: t.X, Y: t.Y, Z: t.Z, W: t.W}
+}
+
+// Vector represents a vector in 3D space.
+type Vector Tuple
+
+// NewVector creates a new Vector.
+func NewVector(x, y, z float64) Vector {
+	return Vector(NewTuple(x, y, z, 0.0))
+}
+
+// Dot calculates the dot product of two vectors.
+func (v Vector) Dot(b Vector) float64 {
+	return v.X*b.X + v.Y*b.Y + v.Z*b.Z
+}
+
+// Magnitude calculates the magnitude of the vector.
+func (v Vector) Magnitude() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y + v.Z*v.Z)
 }
 
-func (v *Vector) Norm() Vector {
-	var m float64 = v.Mag()
-	return NewVector(
-		v.X/m,
-		v.Y/m,
-		v.Z/m,
-	)
+// Normalize returns the normalized vector.
+func (v Vector) Normalize() Vector {
+	mag := v.Magnitude()
+	return v.Scale(1 / mag)
 }
 
-func (v *Vector) Cross(b Vector) Vector {
+// Cross calculates the cross product of two vectors.
+func (v Vector) Cross(b Vector) Vector {
 	return NewVector(
 		v.Y*b.Z-v.Z*b.Y,
 		v.Z*b.X-v.X*b.Z,
@@ -153,18 +111,17 @@ func (v *Vector) Cross(b Vector) Vector {
 	)
 }
 
-func (a *Vector) SubVector(b Vector) Vector {
-	return NewVector(
-		a.X-b.X,
-		a.Y-b.Y,
-		a.Z-b.Z,
-	)
+// Add adds two vectors and returns the result.
+func (v Vector) Add(b Vector) Vector {
+	return Vector(Tuple(v).Add(Tuple(b)))
 }
 
-func (a *Vector) AddVector(b Vector) Vector {
-	return NewVector(
-		a.X+b.X,
-		a.Y+b.Y,
-		a.Z+b.Z,
-	)
+// Sub subtracts two vectors and returns the result.
+func (v Vector) Sub(b Vector) Vector {
+	return Vector(Tuple(v).Sub(Tuple(b)))
+}
+
+// Scale scales the vector by a scalar and returns the result.
+func (v Vector) Scale(factor float64) Vector {
+	return Vector(Tuple(v).Scale(factor))
 }

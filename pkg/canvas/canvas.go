@@ -29,18 +29,17 @@ type Canvas struct {
 }
 
 func New(width, height int) Canvas {
-	var pixels []Pixel
-
+	pixels := make([]Pixel, width*height)
 	for i := 0; i < width; i++ {
 		for j := 0; j < height; j++ {
-			pixels = append(pixels, Pixel{
+			index := i*height + j
+			pixels[index] = Pixel{
 				X:     i,
 				Y:     j,
 				Color: color.New(0, 0, 0),
-			})
+			}
 		}
 	}
-
 	return Canvas{
 		Width:  width,
 		Height: height,
@@ -49,9 +48,12 @@ func New(width, height int) Canvas {
 }
 
 func (c *Canvas) GetPixel(x, y int) (int, *Pixel) {
-	for i, p := range c.Pixels {
-		if p.X == x && p.Y == y {
-			return i, &p
+	if x < 0 || x >= c.Width || y < 0 || y >= c.Height {
+		return -1, nil
+	}
+	for i := range c.Pixels {
+		if c.Pixels[i].X == x && c.Pixels[i].Y == y {
+			return i, &c.Pixels[i]
 		}
 	}
 	return -1, nil
@@ -68,10 +70,7 @@ func (c *Canvas) AddPixel(x, y int, color color.Color) bool {
 
 // SetColor sets all pixels' color to the given one
 func (c *Canvas) SetColor(newColor color.Color) {
-	var newPixels []Pixel
-	for _, p := range c.Pixels {
-		p.UpdateColor(newColor)
-		newPixels = append(newPixels, p)
+	for i := range c.Pixels {
+		c.Pixels[i].UpdateColor(newColor)
 	}
-	c.Pixels = newPixels
 }

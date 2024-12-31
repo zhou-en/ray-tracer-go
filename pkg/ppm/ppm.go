@@ -1,6 +1,7 @@
 package ppm
 
 import (
+	"bufio"
 	"fmt"
 	"github.com/zhou-en/ray-tracing-by-go/pkg/canvas"
 	"github.com/zhou-en/ray-tracing-by-go/pkg/color"
@@ -20,30 +21,10 @@ func New(canvas canvas.Canvas) PPM {
 	}
 
 	var body []color.Color
-	//var lines []string
-	//var line string
-	//var nextLine string
-	for _, p := range canvas.Pixels {
-		p.Color.Scale()
-		body = append(body, p.Color)
-		//if nextLine != "" {
-		//	line = nextLine
-		//	nextLine = ""
-		//}
-
-		//for c := range []float64{p.Color.Red, p.Color.Green, p.Color.Blue} {
-		//	line = fmt.Sprintf("%d ", c) //if len(line) < 69 {
-		//	line = fmt.Sprintf("%s %d ", line, c)
-		//} else {
-		//	line += "\n"
-		//	lines = append(lines, line)
-		//	nextLine = fmt.Sprintf("%s %d ", nextLine, c)
-		//}
-
-		//}
+	for i := range canvas.Pixels {
+		canvas.Pixels[i].Color.Scale()
+		body = append(body, canvas.Pixels[i].Color)
 	}
-	//fmt.Println(lines)
-
 	return PPM{
 		Header: header,
 		Body:   body,
@@ -51,16 +32,18 @@ func New(canvas canvas.Canvas) PPM {
 }
 
 func (p *PPM) WritePPMToFile(ppm PPM, filename string) error {
-	// Open the file for writing
 	file, err := os.Create(filename)
 	if err != nil {
 		return fmt.Errorf("failed to create file: %w", err)
 	}
 	defer file.Close()
 
+	writer := bufio.NewWriter(file)
+	defer writer.Flush()
+
 	// Write the header
 	for _, line := range ppm.Header {
-		_, err := fmt.Fprintln(file, line)
+		_, err := fmt.Fprintln(writer, line)
 		if err != nil {
 			return fmt.Errorf("failed to write header: %w", err)
 		}
@@ -68,24 +51,16 @@ func (p *PPM) WritePPMToFile(ppm PPM, filename string) error {
 
 	// Write the body
 	for i, c := range ppm.Body {
-		r := int32(c.Red)
-		g := int32(c.Green)
-		b := int32(c.Blue)
-		_, err := fmt.Fprintf(file, "%d %d %d", r, g, b)
-		if err != nil {
-			return fmt.Errorf("failed to write body: %w", err)
-		}
-
-		// Add a newline after every 23 pixels for better readability
+		r, g, b := int32(c.Red), int32(c.Green), int32(c.Blue)
 		if (i+1)%23 == 0 {
-			_, err := file.WriteString("\n")
+			_, err := fmt.Fprintf(writer, "%d %d %d\n", r, g, b)
 			if err != nil {
-				return fmt.Errorf("failed to write newline: %w", err)
+				return fmt.Errorf("failed to write body: %w", err)
 			}
 		} else {
-			_, err := file.WriteString(" ")
+			_, err := fmt.Fprintf(writer, "%d %d %d ", r, g, b)
 			if err != nil {
-				return fmt.Errorf("failed to write space: %w", err)
+				return fmt.Errorf("failed to write body: %w", err)
 			}
 		}
 	}

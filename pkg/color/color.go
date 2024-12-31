@@ -12,7 +12,6 @@ type Color struct {
 }
 
 func New(red, green, blue float64) Color {
-
 	return Color{
 		Red:   red,
 		Green: green,
@@ -21,16 +20,8 @@ func New(red, green, blue float64) Color {
 }
 
 func Scaler(num float64) float64 {
-
-	scaledNum := num * 255
-	switch {
-	case scaledNum > 255:
-		return 255
-	case scaledNum < 0:
-		return 0
-	default:
-		return math.Round(scaledNum)
-	}
+	scaledNum := math.Round(num * 255)
+	return math.Min(math.Max(scaledNum, 0), 255)
 }
 
 func (c *Color) Scale() {
